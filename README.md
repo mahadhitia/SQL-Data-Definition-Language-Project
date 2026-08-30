@@ -40,7 +40,6 @@ So, in order to address this problem, the company requires a centralized relatio
 
 **Mahadhitia Commerce** initially manages its operational data across multiple spreadsheet-based datasets.
 Before implementing the database in SQL Server, the data entities and their relationships were analyzed and converted into a relational database model.
-
 The following Entity Relationship Diagram (ERD) illustrates the relationships between the tables:
 
 ---
