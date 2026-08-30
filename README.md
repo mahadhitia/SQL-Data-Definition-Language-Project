@@ -12,8 +12,8 @@ In SQL, Data Definition Language (DDL) is a subset of SQL used to define and man
 2. [Business Problem](#business-problem)
 3. [Database Design](#database-design)
 4. [Database Implementation](#database-implementation)
-   - [Create Database](#create database)
-   - [Create Tables](#create tables)
+   - [Create Database](#create-database)
+   - [Create Tables](#create-tables)
    - [Define Constraints and Relationships](#define-constraints-and-relationships)
 
 ---
