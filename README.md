@@ -42,6 +42,8 @@ So, in order to address this problem, the company requires a centralized relatio
 Before implementing the database in SQL Server, the data entities and their relationships were analyzed and converted into a relational database model.
 The following Entity Relationship Diagram (ERD) illustrates the relationships between the tables:
 
+![](https://github.com/mahadhitia/SQL-Data-Definition-Language-Project/blob/main/Images/Database-Design.png)
+
 ---
 
 ## Database Implementation
