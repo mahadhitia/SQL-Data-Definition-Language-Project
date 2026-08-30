@@ -20,17 +20,28 @@ In SQL, Data Definition Language (DDL) is a subset of SQL used to define and man
 
 ## Project Overview
 
-**Mahadhitia Commerce** is a fictional e-commerce company. This project focuses on designing and building a relational database using Microsoft SQL Server to store, organize, and manage data. The database is developed from ground up, starting from creating database, tables, constraints, and relationships between entities.
+**Mahadhitia Commerce** is a fictional e-commerce company.
+This project focuses on designing and building a relational database using Microsoft SQL Server to store, organize, and manage data.
+The database is developed from ground up, starting from creating database, tables, constraints, and relationships between entities.
 
 ---
 
 ## Business Problem
 
-**Mahadhitia Commerce** has been operating for two years. As the company grows, the amount of data it needs to manage is continuously increasing. Initially, the company used spreadsheets to store and manage its data. However, as the data volume keeps growing, spreadsheets is no longer effective and efficient. So, in order to address this problem, the company requires a centralized relational database.
+**Mahadhitia Commerce** has been operating for two years.
+As the company grows, the amount of data it needs to manage is continuously increasing.
+Initially, the company used spreadsheets to store and manage its data.
+However, as the data volume keeps growing, spreadsheets is no longer effective and efficient.
+So, in order to address this problem, the company requires a centralized relational database.
 
 ---
 
 ## Database Design
+
+**Mahadhitia Commerce** initially manages its operational data across multiple spreadsheet-based datasets.
+Before implementing the database in SQL Server, the data entities and their relationships were analyzed and converted into a relational database model.
+
+The following Entity Relationship Diagram (ERD) illustrates the relationships between the tables:
 
 ---
 
