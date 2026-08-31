@@ -50,6 +50,32 @@ The following Entity Relationship Diagram (ERD) illustrates the relationships be
 
 ### Create Database
 
+``` sql
+USE master;
+GO
+
+-- Drop and recreate the 'MahadhitiaCommerceDB' database
+IF EXISTS (
+	SELECT 1
+	FROM sys.databases
+	WHERE name = 'MahadhitiaCommerceDB'
+)
+BEGIN
+	ALTER DATABASE MahadhitiaCommerceDB
+		SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+
+	DROP DATABASE MahadhitiaCommerceDB;
+END;
+GO
+
+-- Create the 'MahadhitiaCommerceDB' database
+CREATE DATABASE MahadhitiaCommerceDB;
+GO
+
+USE MahadhitiaCommerceDB;
+GO
+```
+
 ### Create Tables
 
 ### Define Constraints and Relationships
