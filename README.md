@@ -426,7 +426,83 @@ GO
 
 ### Add Relationships
 
+``` sql
+-- Add relationship for the 'Products' table 
+-- To the 'Categories' and 'Suppliers' tables
+ALTER TABLE dbo.Products
+ADD CONSTRAINT FK_Products_Categories
+		FOREIGN KEY (CategoryID)
+		REFERENCES dbo.Categories(CategoryID),
 
+	CONSTRAINT FK_Products_Suppliers
+		FOREIGN KEY (SupplierID)
+		REFERENCES dbo.Suppliers(SupplierID);
+GO
+
+-- Add relationship for the 'Orders' table
+-- To the 'Customers' table
+ALTER TABLE dbo.Orders
+ADD CONSTRAINT FK_Orders_Customers
+		FOREIGN KEY (CustomerID)
+		REFERENCES dbo.Customers(CustomerID);
+GO
+
+-- Add relationship for the 'OrderItems' table
+-- To the 'Orders' and 'Products' tables
+ALTER TABLE dbo.OrderItems
+ADD CONSTRAINT FK_OrderItems_Orders
+		FOREIGN KEY (OrderID)
+		REFERENCES dbo.Orders(OrderID),
+
+	CONSTRAINT FK_OrderItems_Products
+		FOREIGN KEY (ProductID)
+		REFERENCES dbo.Products(ProductID);
+GO
+
+-- Add relationship for the 'Inventory' table
+-- To the 'Products' and 'Warehouses' tables
+ALTER TABLE dbo.Inventory
+ADD CONSTRAINT FK_Inventory_Products
+		FOREIGN KEY (ProductID)
+		REFERENCES dbo.Products(ProductID),
+
+	CONSTRAINT FK_Inventory_Warehouses
+		FOREIGN KEY (WarehouseID)
+		REFERENCES dbo.Warehouses(WarehouseID);
+GO
+
+-- Add relationship for the 'Payments' table
+-- To the 'Orders' table
+ALTER TABLE dbo.Payments
+ADD CONSTRAINT FK_Payments_Orders
+		FOREIGN KEY (OrderID)
+		REFERENCES dbo.Orders(OrderID);
+GO
+
+-- Add relationship for the 'Shipments' table
+-- To the 'Orders' and 'Warehouses' tables
+ALTER TABLE dbo.Shipments
+ADD CONSTRAINT FK_Shipments_Orders
+		FOREIGN KEY (OrderID)
+		REFERENCES dbo.Orders(OrderID),
+
+	CONSTRAINT FK_Shipments_Warehouses
+		FOREIGN KEY (WarehouseID)
+		REFERENCES dbo.Warehouses(WarehouseID);
+GO
+
+-- Add relationship for the 'Returns' table
+-- To the 'Orders' and 'Products' tables
+ALTER TABLE dbo.[Returns]
+ADD CONSTRAINT FK_Returns_Orders
+		FOREIGN KEY (OrderID)
+		REFERENCES dbo.Orders(OrderID),
+
+	CONSTRAINT FK_Returns_Products
+		FOREIGN KEY (ProductID)
+		REFERENCES dbo.Products(ProductID);
+GO
+```
 
 ---
 
