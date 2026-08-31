@@ -78,6 +78,124 @@ GO
 
 ### Create Tables
 
+``` sql
+-- Create the 'Categories' table
+CREATE TABLE dbo.Categories (
+	CategoryID INT IDENTITY(1,1),
+	CategoryName VARCHAR(100) NOT NULL
+);
+GO
+
+-- Create the 'Suppliers' table
+CREATE TABLE dbo.Suppliers (
+	SupplierID INT IDENTITY(1,1),
+	SupplierName VARCHAR(100) NOT NULL,
+	Email VARCHAR(150),
+	City VARCHAR(50)
+);
+GO
+
+-- Create the 'Warehouses' table
+CREATE TABLE dbo.Warehouses (
+	WarehouseID INT IDENTITY(1,1),
+	WarehouseName VARCHAR(100) NOT NULL,
+	City VARCHAR(50) NOT NULL,
+	Capacity INT NOT NULL,
+	IsActive BIT NOT NULL
+);
+GO
+
+-- Create the 'Customers' table
+CREATE TABLE dbo.Customers (
+	CustomerID INT IDENTITY(1,1),
+	CustomerName VARCHAR(100) NOT NULL,
+	Email VARCHAR(150) NOT NULL,
+	City VARCHAR(50),
+	CreatedDate DATE NOT NULL
+);
+GO
+
+-- Create the 'Products' table
+CREATE TABLE dbo.Products (
+	ProductID INT IDENTITY(1,1),
+	ProductName VARCHAR(150) NOT NULL,
+	Price DECIMAL(10,2) NOT NULL,
+	CategoryID INT NOT NULL,
+	SupplierID INT NOT NULL,
+	CreatedDate DATE NOT NULL,
+	IsActive BIT NOT NULL
+);
+GO
+
+-- Create the 'Orders' table
+CREATE TABLE dbo.Orders (
+	OrderID INT IDENTITY(1,1),
+	CustomerID INT NOT NULL,
+	OrderDate DATE NOT NULL,
+	OrderStatus VARCHAR(20) NOT NULL,
+	TotalAmount DECIMAL(12,2) NOT NULL,
+	CancelledDate DATE,
+	ShippedDate DATE
+);
+GO
+
+-- Create the 'OrderItems' table
+CREATE TABLE dbo.OrderItems (
+	OrderItemID INT IDENTITY(1,1),
+	OrderID INT NOT NULL,
+	ProductID INT NOT NULL,
+	Quantity INT NOT NULL,
+	UnitPrice DECIMAL(10,2) NOT NULL,
+	DiscountPercent DECIMAL(5,2)
+);
+GO
+
+-- Create the 'Inventory' table
+CREATE TABLE dbo.Inventory (
+	InventoryID INT IDENTITY(1,1),
+	ProductID INT NOT NULL,
+	WarehouseID INT NOT NULL,
+	StockQuantity INT NOT NULL,
+	LastUpdated DATETIME2(0) NOT NULL
+);
+GO
+
+-- Create the 'Payments' table
+CREATE TABLE dbo.Payments (
+	PaymentID INT IDENTITY(1,1),
+	OrderID INT NOT NULL,
+	PaymentDate DATETIME2(0) NOT NULL,
+	Amount DECIMAL(12,2) NOT NULL,
+	PaymentMethod VARCHAR(30) NOT NULL,
+	PaymentStatus VARCHAR(20) NOT NULL,
+	PaymentReference VARCHAR(100)
+);
+GO
+
+-- Create the 'Shipments' table
+CREATE TABLE dbo.Shipments (
+	ShipmentID INT IDENTITY(1,1),
+	OrderID INT NOT NULL,
+	WarehouseID INT NOT NULL,
+	ShipmentDate DATETIME2(0),
+	ShipmentStatus VARCHAR(20) NOT NULL,
+	TrackingNumber VARCHAR (100)
+);
+GO
+
+-- Create the 'Returns' table
+CREATE TABLE dbo.[Returns] (
+	ReturnID INT IDENTITY(1,1),
+	OrderID INT NOT NULL,
+	ProductID INT NOT NULL,
+	ReturnDate DATE NOT NULL,
+	Quantity INT NOT NULL,
+	Reason VARCHAR(255),
+	Status VARCHAR(20) NOT NULL
+);
+GO
+```
+
 ### Define Constraints and Relationships
 
 ---
