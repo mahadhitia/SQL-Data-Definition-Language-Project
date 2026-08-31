@@ -77,6 +77,8 @@ USE MahadhitiaCommerceDB;
 GO
 ```
 
+---
+
 ### Create Tables
 
 ``` sql
@@ -196,6 +198,8 @@ CREATE TABLE dbo.[Returns] (
 );
 GO
 ```
+
+---
 
 ### Add Constraints
 
@@ -421,6 +425,8 @@ GO
 ---
 
 ### Add Relationships
+
+
 
 ---
 
