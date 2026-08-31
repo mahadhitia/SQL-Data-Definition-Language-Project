@@ -16,6 +16,8 @@ In SQL, Data Definition Language (DDL) is a subset of SQL used to define and man
    - [Create Tables](#create-tables)
    - [Add Constraints](#add-constraints)
    - [Add Relationships](#add-relationships)
+5. [Conclusions](#conclusions)
+6. [What's Next?](#what's-next?)
 
 ---
 
@@ -506,3 +508,23 @@ GO
 
 ---
 
+## Conclusions
+
+Based on this project:
+- The database designed has the potential to solve Mahadhitia Commerce's business problem
+  in terms of storing, organizing, and managing data.
+- All table formats from spreadsheets have been converted into tables in SQL Server.
+- Constraints are helpful for applying rules to the corresponding columns.
+- Relationships are helpful for creating connections between the corresponding tables.
+
+---
+
+## What's Next?
+
+All right, we've covered the project about DDL, in this case,
+to help Mahadhitia Commerce with its business problem by designing a database to help manage its data.
+But what we did was only create the structures for the data to live in.
+Next, we're going to continue this project by adding or inserting the data it contains into the tables we've made.
+Stay tuned!
+
+---
