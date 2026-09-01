@@ -1,7 +1,10 @@
-# SQL-Data-Definition-Language-Project
+# SQL-Mahadhitia-Commerce-Database
 
 Hi 👋, welcome friends!<br>
-In SQL, Data Definition Language (DDL) is a subset of SQL used to define and manage the structural blueprint of a database. On this page, we will explore a DDL project I created to demonstrate how database structures are designed and implemented.
+In SQL, Data Definition Language (DDL) is used to define and manage the structural blueprint of a database,
+while Data Manipulation Language (DML) is used to insert, update, and manage the data stored within it.
+In this project, we will explore how a relational database is designed, implemented, and populated using Microsoft SQL Server,
+from creating tables, constraints, and relationships to loading business data from CSV files into the database.
 
 ![](https://github.com/mahadhitia/SQL-Data-Definition-Language-Project/blob/main/Images/Mahadhitia-logo.png)
 
@@ -16,6 +19,7 @@ In SQL, Data Definition Language (DDL) is a subset of SQL used to define and man
    - [Create Tables](#create-tables)
    - [Add Constraints](#add-constraints)
    - [Add Relationships](#add-relationships)
+   - [Load Data](#load-data)
 5. [Conclusions](#conclusions)
 
 ---
@@ -24,7 +28,7 @@ In SQL, Data Definition Language (DDL) is a subset of SQL used to define and man
 
 **Mahadhitia Commerce** is a fictional e-commerce company.
 This project focuses on designing and building a relational database using Microsoft SQL Server to store, organize, and manage data.
-The database is developed from ground up, starting from creating database, tables, constraints, and relationships between entities.
+The database is developed from ground up, starting from creating database, tables, constraints, relationships, and load data.
 
 ---
 
@@ -507,6 +511,120 @@ GO
 
 ---
 
+### Load Data
+
+``` sql
+-- Load 'categories.csv' into the 'Categories' table 
+BULK INSERT dbo.Categories
+FROM 'D:\SQL\MahadhitiaCommerce\data\categories.csv'
+WITH (
+	FORMAT = 'CSV',
+	FIRSTROW = 2,
+	KEEPIDENTITY
+);
+GO
+
+-- Load 'suppliers.csv' into the 'Suppliers' table
+BULK INSERT dbo.Suppliers
+FROM 'D:\SQL\MahadhitiaCommerce\data\suppliers.csv'
+WITH (
+	FORMAT = 'CSV',
+	FIRSTROW = 2,
+	KEEPIDENTITY
+);
+GO
+
+-- Load 'warehouses.csv' into the 'Warehouses' table
+BULK INSERT dbo.Warehouses
+FROM 'D:\SQL\MahadhitiaCommerce\data\warehouses.csv'
+WITH (
+	FORMAT = 'CSV',
+	FIRSTROW = 2,
+	KEEPIDENTITY
+);
+GO
+
+-- Load 'customers.csv' into the 'Customers' table
+BULK INSERT dbo.Customers
+FROM 'D:\SQL\MahadhitiaCommerce\data\customers.csv'
+WITH (
+	FORMAT = 'CSV',
+	FIRSTROW = 2,
+	KEEPIDENTITY
+);
+GO
+
+-- Load 'products.csv' into the 'Products' table
+BULK INSERT dbo.Products
+FROM 'D:\SQL\MahadhitiaCommerce\data\products.csv'
+WITH (
+	FORMAT = 'CSV',
+	FIRSTROW = 2,
+	KEEPIDENTITY
+);
+GO
+
+-- Load 'orders.csv' into the 'Orders' table
+BULK INSERT dbo.Orders
+FROM 'D:\SQL\MahadhitiaCommerce\data\orders.csv'
+WITH (
+	FORMAT = 'CSV',
+	FIRSTROW = 2,
+	KEEPIDENTITY
+);
+GO
+
+-- Load 'orderitems.csv' into the 'OrderItems' table
+BULK INSERT dbo.OrderItems
+FROM 'D:\SQL\MahadhitiaCommerce\data\orderitems.csv'
+WITH (
+	FORMAT = 'CSV',
+	FIRSTROW = 2,
+	KEEPIDENTITY
+);
+GO
+
+-- Load 'inventory.csv' into the 'Inventory' table
+BULK INSERT dbo.Inventory
+FROM 'D:\SQL\MahadhitiaCommerce\data\inventory.csv'
+WITH (
+	FORMAT = 'CSV',
+	FIRSTROW = 2,
+	KEEPIDENTITY
+);
+GO
+
+-- Load 'payments.csv' into the 'Payments' table
+BULK INSERT dbo.Payments
+FROM 'D:\SQL\MahadhitiaCommerce\data\payments.csv'
+WITH (
+	FORMAT = 'CSV',
+	FIRSTROW = 2,
+	KEEPIDENTITY
+);
+GO
+
+-- Load 'shipments.csv' into the 'Shipments' table
+BULK INSERT dbo.Shipments
+FROM 'D:\SQL\MahadhitiaCommerce\data\shipments.csv'
+WITH (
+	FORMAT = 'CSV',
+	FIRSTROW = 2,
+	KEEPIDENTITY
+);
+GO
+
+-- Load 'returns.csv' into the 'Returns' table
+BULK INSERT dbo.[Returns]
+FROM 'D:\SQL\MahadhitiaCommerce\data\returns.csv'
+WITH (
+	FORMAT = 'CSV',
+	FIRSTROW = 2,
+	KEEPIDENTITY
+);
+GO
+```
+
 ## Conclusions
 
 Based on this project:
@@ -515,15 +633,6 @@ Based on this project:
 - All table formats from spreadsheets have been converted into tables in SQL Server.
 - Constraints are helpful for applying rules to the corresponding columns.
 - Relationships are helpful for creating connections between the corresponding tables.
-
----
-
-## What's Next?
-
-All right, we've covered the project about DDL, in this case,
-to help Mahadhitia Commerce with its business problem by designing a database to help manage its data.
-But what we did was only create the structures for the data to live in.
-Next, we're going to continue this project by adding or inserting the data it contains into the tables we've made.
-Stay tuned!
+- Data from CSV format are loaded into the corresponding tables.
 
 ---
