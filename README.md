@@ -1,4 +1,4 @@
-# SQL-Mahadhitia-Commerce-Database-Project
+# SQL-NovaMart-Database-Design-Project
 
 Hi 👋, welcome friends!<br>
 In SQL, Data Definition Language (DDL) is used to define and manage the structural blueprint of a database,
