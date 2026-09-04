@@ -6,7 +6,7 @@ while Data Manipulation Language (DML) is used to insert, update, and manage the
 In this project, we will explore how a relational database is designed, implemented, and populated using Microsoft SQL Server,
 from creating tables, constraints, and relationships to loading business data from CSV files into the database.
 
-![](https://github.com/mahadhitia/SQL-Data-Definition-Language-Project/blob/main/Images/Mahadhitia-logo.png)
+![](https://github.com/mahadhitia/SQL-NovaMart-Database-Design-Project/blob/main/Images/Novamart-logo.png)
 
 ---
 ## Table of Contents
@@ -26,7 +26,7 @@ from creating tables, constraints, and relationships to loading business data fr
 
 ## Project Overview
 
-**Mahadhitia Commerce** is a fictional e-commerce company.
+**NovaMart** is a fictional e-commerce company.
 This project focuses on designing and building a relational database using Microsoft SQL Server to store, organize, and manage data.
 The database is developed from ground up, starting from creating database, tables, constraints, relationships, and load data.
 
@@ -34,7 +34,7 @@ The database is developed from ground up, starting from creating database, table
 
 ## Business Problem
 
-**Mahadhitia Commerce** has been operating for two years.
+**NovaMart** has been operating for two years.
 As the company grows, the amount of data it needs to manage is continuously increasing.
 Initially, the company used spreadsheets to store and manage its data.
 However, as the data volume keeps growing, spreadsheets is no longer effective and efficient.
@@ -44,11 +44,11 @@ So, in order to address this problem, the company requires a centralized relatio
 
 ## Database Design
 
-**Mahadhitia Commerce** initially manages its operational data across multiple spreadsheet-based datasets.
+**NovaMart** initially manages its operational data across multiple spreadsheet-based datasets.
 Before implementing the database in SQL Server, the data entities and their relationships were analyzed and converted into a relational database model.
 The following Entity Relationship Diagram (ERD) illustrates the relationships between the tables:
 
-![](https://github.com/mahadhitia/SQL-Data-Definition-Language-Project/blob/main/Images/Database-Design.png)
+![](https://github.com/mahadhitia/SQL-NovaMart-Database-Design-Project/blob/main/Images/Database-Design.png)
 
 ---
 
@@ -60,25 +60,25 @@ The following Entity Relationship Diagram (ERD) illustrates the relationships be
 USE master;
 GO
 
--- Drop and recreate the 'MahadhitiaCommerceDB' database
+-- Drop and recreate the 'NovaMartDB' database
 IF EXISTS (
 	SELECT 1
 	FROM sys.databases
-	WHERE name = 'MahadhitiaCommerceDB'
+	WHERE name = 'NovaMartDB'
 )
 BEGIN
-	ALTER DATABASE MahadhitiaCommerceDB
+	ALTER DATABASE NovaMartDB
 		SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
 
-	DROP DATABASE MahadhitiaCommerceDB;
+	DROP DATABASE NovaMartDB;
 END;
 GO
 
--- Create the 'MahadhitiaCommerceDB' database
-CREATE DATABASE MahadhitiaCommerceDB;
+-- Create the 'NovaMartDB' database
+CREATE DATABASE NovaMartDB;
 GO
 
-USE MahadhitiaCommerceDB;
+USE NovaMartDB;
 GO
 ```
 
@@ -628,7 +628,7 @@ GO
 ## Conclusions
 
 Based on this project:
-- The database designed has the potential to solve Mahadhitia Commerce's business problem
+- The database designed has the potential to solve NovaMart's business problem
   in terms of storing, organizing, and managing data.
 - All table formats from spreadsheets have been converted into tables in SQL Server.
 - Constraints are helpful for applying rules to the corresponding columns.
